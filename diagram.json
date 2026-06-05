@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "author": "OrbitWatch",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": -28.2, "left": 66.6, "attrs": {} },
+    { "type": "wokwi-tmp36", "id": "tmp1", "top": -120, "left": 250, "attrs": {} },
+    { "type": "wokwi-led", "id": "led1", "top": -120, "left": 420, "attrs": { "color": "green" } },
+    { "type": "wokwi-led", "id": "led2", "top": -70, "left": 420, "attrs": { "color": "yellow" } },
+    { "type": "wokwi-led", "id": "led3", "top": -20, "left": 420, "attrs": { "color": "red" } },
+    { "type": "wokwi-buzzer", "id": "buzz1", "top": -247.2, "left": 241.8, "attrs": {} },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -120,
+      "left": 350,
+      "attrs": { "value": "220" }
+    },
+    { "type": "wokwi-resistor", "id": "r2", "top": -70, "left": 350, "attrs": { "value": "220" } },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": -5.65,
+      "left": 124.8,
+      "attrs": { "value": "220" }
+    }
+  ],
+  "connections": [
+    [ "tmp1:VCC", "uno:5V", "red", [] ],
+    [ "tmp1:GND", "uno:GND.1", "black", [] ],
+    [ "tmp1:OUT", "uno:A0", "green", [] ],
+    [ "uno:2", "led1:A", "green", [] ],
+    [ "led1:C", "r1:1", "gray", [] ],
+    [ "r1:2", "uno:GND.2", "black", [] ],
+    [ "uno:3", "led2:A", "green", [] ],
+    [ "led2:C", "r2:1", "gray", [] ],
+    [ "r2:2", "uno:GND.2", "black", [] ],
+    [ "uno:4", "led3:A", "green", [] ],
+    [ "led3:C", "r3:1", "gray", [] ],
+    [ "r3:2", "uno:GND.2", "black", [] ],
+    [ "buzz1:1", "uno:5", "blue", [] ],
+    [ "buzz1:2", "uno:GND.2", "black", [] ]
+  ],
+  "dependencies": {}
+}
